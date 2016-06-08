@@ -6,3 +6,6 @@
 - `git stash`
 - `git fetch`
 - `git merge`
+
+
+Il faut éditer un fichier
