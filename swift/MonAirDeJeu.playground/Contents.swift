@@ -217,3 +217,13 @@ func sumOf(numbers: Int...) -> Int{
 }
 sumOf()
 sumOf(42, 597, 12)
+
+// 17 
+
+func returnFifteen() -> Int{
+    var y = 10
+    func add(){ y += 5}
+    add()
+    return y
+}
+returnFifteen()
