@@ -130,15 +130,25 @@ var optionalString2: String?
 print(optionalString2 == nil)
 var optionalString3 : String
 //print(optionalString3 == optionalString2)
-optionalString3 = "Bonjour"
+optionalString3 = "Bonjour elvis "
 //print(optionalString3 == nil)
 print("optionalString1 = \(optionalString1)")
 print("optionalString2 = \(optionalString2)")
 print("optionalString3 =  \(optionalString3)")
 
 
+// 11 
 
-
-
+let vegetable = "red pepper"
+var vegetableComment :String 
+switch vegetable {
+    case "cucumber", "watercress":
+        vegetableComment = "That would make a good tea sandwich"
+    case var x  where x.hasSuffix("pepper"):
+        vegetableComment = "Is it a spicy \(x)"
+    default:
+        vegetableComment = "Everything tastes good in soup."
+}
+print("Result: \(vegetableComment)")
 
 
