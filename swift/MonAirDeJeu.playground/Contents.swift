@@ -68,5 +68,29 @@ let emptyDictionnary = [String : Float]()
 
 // 08
 
+shoppingList = []
+
+occupations = [:]
+
+// 09
+var score = 50
+var teamScore = 0
+if score > 50 {
+    teamScore += 3
+}
+else if score < 0{
+    teamScore = 0
+}
+else{
+    teamScore += 1
+}
+teamScore
+
+var individualScores = [4, 0, 3]
+
+for score in individualScores {
+    score
+}
+
 
 
