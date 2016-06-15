@@ -176,7 +176,30 @@ print(secondForLoop)
 
 // 14
 
-func greet(name: String, atDay: String) -> String{
-    return "Hello \(name), today is \(atDay)."
+func greet(name: String, atDay: String) -> (a:String, b:String, c:String){
+    //return "Hello \(name), today is \(atDay)."
+    return  (name, atDay, "Hello \(name), today is \(atDay).")
 }
-greet("BOb", atDay: "tuesday")
+
+var blob = greet("BOb", atDay: "tuesday")
+blob.a
+
+// TUPLE
+let min = 10
+let max = 20
+let value = 15
+var range = (value, min, max)
+
+range.2
+
+// 15
+
+//func calculateStatistics(scores:[Int]) -> (min: Int, max: Int, sum: Int){
+//    var min = scores[0]
+//    var max = scores[0]
+//    var sum = 0
+//    for score in scores {
+//        if score > max { max = score } else if score < min {min = score}
+//        
+//    }
+//}
