@@ -174,3 +174,9 @@ for var i = 0; i < 4; i++ { secondForLoop += i}
 print(secondForLoop)
 
 
+// 14
+
+func greet(name: String, atDay: String) -> String{
+    return "Hello \(name), today is \(atDay)."
+}
+greet("BOb", atDay: "tuesday")
