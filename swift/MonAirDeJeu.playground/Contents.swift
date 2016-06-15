@@ -38,3 +38,35 @@ let appleSummary = "I have \(apples) apples."
 
 let fruits = "I have \(apples + oranges) fruits"
 
+
+// 06 
+
+var shoppingList = ["catfish" , "water", "tulips"]
+shoppingList[1]
+shoppingList[1] = "bottle of water"
+var occupations = [
+    "Malcolm" : "Captain",
+    "Kaylee" : "Mechanic"
+]
+occupations["Jayne"] = "Public Relations"
+//shoppingList[10] = "blob"
+var strangeList = ["catfish" , 33 , 22.3]
+strangeList[1]
+strangeList[2]
+
+//07
+
+var emptyArray = [String]()
+emptyArray.append("Hello")
+let emptyDictionnary = [String : Float]()
+
+//07Bis
+//var emptyArray2 = []
+//emptyArray2.append("Hello")
+//emptyArray2.append(33)
+//emptyArray2
+
+// 08
+
+
+
