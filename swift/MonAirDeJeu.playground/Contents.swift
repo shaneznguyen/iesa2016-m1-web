@@ -227,3 +227,26 @@ func returnFifteen() -> Int{
     return y
 }
 returnFifteen()
+
+// 20 
+let numbers = [1, 2, 3]
+numbers.map({
+    (number: Int) -> Int in
+    let result = 3 * number
+    return result
+})
+var names = ["r", "j"]
+names.map({
+    (name: String) -> String in
+    return "Bonjour \(name)"
+})
+
+var peoples = [(name: "Blob", age: 23)]
+
+peoples.map({
+    (personne: (String, Int)) -> Int in
+    return personne.1
+})
+
+let mappedNumbers = numbers.map({ number in 3 * number })
+print(mappedNumbers)
