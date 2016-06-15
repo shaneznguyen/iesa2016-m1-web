@@ -92,5 +92,53 @@ for score in individualScores {
     score
 }
 
+// 09 myArray.count
+
+let individualScores2 = [75, 43, 103, 87, 12]
+var teamScore2 = 0
+
+for score in individualScores2 {
+    if score > 50 {
+        teamScore2 += 3
+    }
+    else {
+        teamScore2 += 1
+    }
+}
+print(teamScore2)
+
+print(individualScores2.count)
+
+// 10
+
+//var optionalString: String? = "Hello"
+//print(optionalString == nil)
+//var optionalName : String? = "John Appleseed" //nil
+//var greeting = "Hello"
+//
+//
+//if let name = optionalName {
+//    greeting = "Hello, \(name)"
+//}
+
+
+// 10
+
+var optionalString1: String? = "Hello"
+print(optionalString1 == nil)
+var optionalString2: String?
+print(optionalString2 == nil)
+var optionalString3 : String
+//print(optionalString3 == optionalString2)
+optionalString3 = "Bonjour"
+//print(optionalString3 == nil)
+print("optionalString1 = \(optionalString1)")
+print("optionalString2 = \(optionalString2)")
+print("optionalString3 =  \(optionalString3)")
+
+
+
+
+
 
 
