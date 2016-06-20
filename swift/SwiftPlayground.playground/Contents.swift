@@ -52,6 +52,7 @@ class NamedShape{
     //j'affecte mon paramètre à un attribut
     
     //init(name: String) est une méthode avec le parametre name
+    //pas de type de retour mais retourne quelq
     init(name: String) {self.name = name}
     
     //le type de retour est un String
@@ -59,3 +60,136 @@ class NamedShape{
     func getInfo() -> String {return "\(sidesCount) sides"}
 }
 
+var newShape = NamedShape(name: "ok")
+newShape.sidesCount = 5
+newShape.getInfo()
+
+
+//NamedShape -> père
+//Square -> enfant
+class Square : NamedShape{
+    var sideLength: Double
+    init (length: Double, name: String){
+        
+        //dans soi-même (Square) je vais chercher sideLength
+        self.sideLength = length
+        
+        //je vais chercher le constructeur du père (NamedShape) et celui qui prend le name et elle le lui donne
+        //vu que le name est dans le père
+        super.init(name:name)
+        sidesCount = 4
+    }
+    
+    //on crée la méthode area
+    //calcul de la surface
+    func area()-> Double {
+        return sideLength * sideLength
+    }
+    
+    //on redéfinit la méthode getInfo en la surchargeant 
+    //après l'override on réécrit la même chose en modifiant juste ce qu'on retourne
+    override func getInfo() -> String {
+        return "Square: L=\(sideLength)."
+    }
+}
+
+let s = Square(length: 5.2, name: "myS")
+s.area()
+s.getInfo()
+
+
+
+class jeuxDeSociete {
+    var GameName : String
+    var nbrJoueur : Int
+    init(GameName: String, nbrJoueur: Int){ self.GameName = GameName; self.nbrJoueur = nbrJoueur }
+    
+    func play() -> String {
+        return "We are playing \(GameName) and we are \(nbrJoueur) players"
+    }
+}
+
+var poker = jeuxDeSociete(GameName: "Poker", nbrJoueur: 6)
+poker.play()
+
+class jeuDePlateau : jeuxDeSociete{
+    var nbrCases: Int
+    var nbrPions: Int
+    var notation: Double
+    init(nbrCases: Int, nbrPions: Int, notation: Double, GameName: String, nbrJoueur: Int){
+        self.nbrCases = nbrCases
+        self.nbrPions = nbrPions
+        self.notation = notation
+        super.init(GameName: GameName, nbrJoueur: nbrJoueur)
+    }
+    override func play() -> String {
+        return "We are playing \(GameName), we are \(nbrJoueur) players, you have \(nbrCases) cases, you have \(nbrPions) pawns and for notation : \(notation)."
+    }
+}
+
+var monopoly = jeuDePlateau(nbrCases: 36, nbrPions: 4, notation: 4.5, GameName: "monopoly", nbrJoueur: 4)
+monopoly.play()
+
+
+/*
+
+class Person {
+    
+    var name1: String = ""
+    var age: Int = 0
+    
+    func getName()->String{
+        return name1
+    }
+    func setName(name2:String){
+        self.name1 = name2
+    }
+    
+    func getAge()->Int{
+        return age
+    }
+    func setAge(age:Int){
+        self.age = age
+    }
+    
+}
+*/
+
+
+//CQS Command Query Segregation
+//on sépare les méthode de types command des méthodes de types query
+
+class Person {
+    //get et set permettent d'acéder au name
+    var name: String = ""
+    var age: Int = 0
+    
+    //getter (query)
+    func getName()->String{
+        return name
+    }
+    
+    //setter (command)
+    func setName(name:String){
+        self.name = name
+    }
+    
+    func getAge()->Int{
+        return age
+    }
+    func setAge(age:Int){
+        self.age = age
+    }
+    
+}
+
+
+class Counter {
+    var count: Int = 0
+    func incrementBy(amount: Int, numberOfTimes times: Int){
+        count += amount * times
+    }
+}
+
+var counter = Counter()
+counter.incrementBy(2, numberOfTimes: 7)
