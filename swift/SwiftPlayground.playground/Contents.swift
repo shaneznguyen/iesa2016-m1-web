@@ -158,7 +158,7 @@ class Person {
 
 //CQS Command Query Segregation
 //on sépare les méthode de types command des méthodes de types query
-
+/*
 class Person {
     //get et set permettent d'acéder au name
     var name: String = ""
@@ -181,7 +181,7 @@ class Person {
         self.age = age
     }
     
-}
+}*/
 
 
 class Counter {
@@ -192,4 +192,69 @@ class Counter {
 }
 
 var counter = Counter()
-counter.incrementBy(2, numberOfTimes: 7) 
+counter.incrementBy(2, numberOfTimes: 7)
+
+
+
+
+
+//enum & struct
+enum Rank: Int {
+    case Ace = 1
+    case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+    case Jack, Queen, King
+    
+    func getInof() -> String{
+        switch self{
+        case .Ace: return "ace"
+        case .Jack: return "jack"
+        
+        case .Queen: return "queen"
+        case .King: return "king"
+        default: return
+            String(self.rawValue)
+        }
+    }
+}
+
+let ace = Rank.Ace
+let aceRawValue = ace.rawValue
+
+enum Sex: Int{
+    case Male
+    case Female
+    case Unknown
+}
+
+class Person {
+    //get et set permettent d'acéder au name
+    var name: String = ""
+    var age: Int = 0
+    var sex: Sex = Sex.Male
+    
+    //getter (query)
+    func getName()->String{
+        return name
+    }
+    
+    //setter (command)
+    func setName(name:String){
+        self.name = name
+    }
+    
+    func getAge()->Int{
+        return age
+    }
+    func setAge(age:Int){
+        self.age = age
+    }
+
+    func getSex()->Sex{
+        return sex
+    }
+    func setSex(sex:Sex){
+        self.sex = sex
+    }
+
+}
+
