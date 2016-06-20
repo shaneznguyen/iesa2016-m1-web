@@ -293,3 +293,21 @@ struct Card{
 
 let threeOfSpades = Card(rank: .Three, suit: .Spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+
+
+
+protocol Personnage {
+    func deplacer()
+}
+
+class Humain :Personnage{
+    func deplacer(){
+        print("marcher")
+    }
+}
+
+class Limace :Personnage{
+    func deplacer(){
+        print("ramper")
+    }
+}
