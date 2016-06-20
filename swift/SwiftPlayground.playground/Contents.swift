@@ -196,30 +196,6 @@ counter.incrementBy(2, numberOfTimes: 7)
 
 
 
-
-
-//enum & struct
-enum Rank: Int {
-    case Ace = 1
-    case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
-    case Jack, Queen, King
-    
-    func getInof() -> String{
-        switch self{
-        case .Ace: return "ace"
-        case .Jack: return "jack"
-        
-        case .Queen: return "queen"
-        case .King: return "king"
-        default: return
-            String(self.rawValue)
-        }
-    }
-}
-
-let ace = Rank.Ace
-let aceRawValue = ace.rawValue
-
 enum Sex: Int{
     case Male
     case Female
@@ -258,3 +234,62 @@ class Person {
 
 }
 
+
+
+//enum & struct
+enum Rank: Int {
+    case Ace = 1
+    case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+    case Jack, Queen, King
+    
+    func simpleDescription() -> String{
+        switch self{
+        case .Ace:
+            return "ace"
+        case .Jack:
+            return "jack"
+        case .Queen:
+            return "queen"
+        case .King:
+            return "king"
+        default: return
+            String(self.rawValue)
+        }
+    }
+}
+
+let ace = Rank.Ace
+let aceRawValue = ace.rawValue
+
+
+
+enum Suit: Int {
+    case Spades, Clovers, Hearts, Diamonds
+    
+   func simpleDescription() -> String {
+            switch self {
+            case .Spades:
+                return "spades"
+            case .Clovers:
+                return "clovers"
+            case .Hearts:
+                return "hearts"
+            case .Diamonds:
+                return "diamonds"
+            }
+    }
+}
+
+//structure
+
+struct Card{
+    var rank: Rank
+    var suit: Suit
+    
+    func simpleDescription() -> String{
+        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+    }
+}
+
+let threeOfSpades = Card(rank: .Three, suit: .Spades)
+let threeOfSpadesDescription = threeOfSpades.simpleDescription()
