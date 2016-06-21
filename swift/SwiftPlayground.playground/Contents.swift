@@ -295,7 +295,8 @@ let threeOfSpades = Card(rank: .Three, suit: .Spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
 
 
-
+//permet de faire une méthode commune à chacun 
+//les classes qui en hé
 protocol Personnage {
     func deplacer()
 }
@@ -311,3 +312,33 @@ class Limace :Personnage{
         print("ramper")
     }
 }
+
+
+
+
+//access level sans private
+
+class Book{
+    var author: String = ""
+    var title: String = ""
+    
+    //méthode qui concatène les deux variables
+    
+    //func nom_de_la_methode(parametre_de_la_methode)()->Type_De_retour{}
+    //peut ne pas avoir de param 
+    //peut ne pas avoir de retour
+    func getDescription()->String{
+        return author + " - " + title  //pas de parenthèses car pas une méthode mais une données
+    }
+}
+
+//instancie la classe book en donnant des valeurs aux variables
+var book = Book()
+book.author="JKR"
+book.title="Harry Potter"
+
+
+//on appelle la méthode de concaténation des deux variables qui représente la description
+book.getDescription()
+
+//si on met un private devant la classe ça ne marche pas
